@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="data:application/octet-stream;base64,Rm91bmQuIFJlZGlyZWN0aW5nIHRvIC9hZnJhbWUtZW52aXJvbm1lbnQtY29tcG9uZW50QDIuMC4wL2Rpc3QvYWZyYW1lLWVudmlyb25tZW50LWNvbXBvbmVudC5taW4uanM="></script>
+  </head>
+  <body>
+    <a-scene>
+
+    <a-text value="Meet my bird Paco!" position="-24 3 -10" rotation="0 90 0"
+
+    ></a-text>
+
+
+
+
+      <a-assets>
+        <img id="groundTexture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS4MgMdUauN7cwpgG4qG6ui_xV3Xv20UvOXOw&usqp=CAU">
+        <img id="skyTexture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSdumw5aKsanPj1h5fX3PwBTD3qa0vlXc3kxQ&usqp=CAU">
+        <a-asset-items id="table" src="gltfTable/scene.gltf"></a-asset-items>
+        <a-asset-items id="chair" src="gltfChair/scene.gltf"></a-asset-items>
+        <a-asset-items id="fireplace" src="gltfFireplace/scene.gltf"></a-asset-items>
+        <a-asset-items id="head" src="gltfWHead/scene.gltf"></a-asset-items>
+        <a-asset-items id="bear" src="gltfBear/scene.gltf"></a-asset-items>
+        <a-asset-items id="bookshelf" src="gltfBookshelf/scene.gltf"></a-asset-items>
+        <a-asset-items id="chandlier" src="gltfChandlier/scene.gltf"></a-asset-items>
+        <a-asset-items id="door" src="gltfDoor/scene.gltf"></a-asset-items>
+        <a-asset-items id="kitchen" src="gltfKitchen/scene.gltf"></a-asset-items>
+        <a-asset-items id="stove" src="gltfStove/scene.gltf"></a-asset-items>
+        <a-asset-items id="rug" src="gltfRug/scene.gltf"></a-asset-items>
+        <a-asset-items id="bird" src="gltfBird/scene.gltf"></a-asset-items>
+        <a-asset-items id="perch" src="gltfPerch/scene.gltf"></a-asset-items>
+        <a-asset-items id="couch" src="gltfCouch/scene.gltf"></a-asset-items>
+        <a-asset-items id="redCouch" src="gltfRedCouch/scene.gltf"></a-asset-items>
+        <a-asset-items id="poolTable" src="gltfPoolTable/scene.gltf"></a-asset-items>
+        <a-asset-items id="pong" src="gltfPong/scene.gltf"></a-asset-items>
+        <a-asset-items id="Arug" src="gltfArug/scene.gltf"></a-asset-items>
+      </a-assets>
+
+
+
+      <!---camera-->
+      <a-entity position="0 1 -10" rotation="0 180 0">
+        <a-camera universal-controls="acceleration: 10">
+      <a-entity raycaster="far: 150; objects: .intersectable" cursor geometry="primitive: ring; radiusOuter: 0.015;
+                              radiusInner: 0.01; segmentsTheta: 32" material="color: #283644; shader: flat" position="0 0 -0.75"></a-entity>
+      </a-camera>
+    </a-entity>
+
+
+      <a-sky id="image-360" radius="99" src="#skyTexture"></a-sky>
+      <a-plane src="#groundTexture" rotation="-90 0 0" width="100" depth="100" height="100" repeat="300 300"></a-plane>
+
+      <!---celing----->
+      <a-entity static-body geometry="primitive: box;  depth: 50; height: 0.1; width: 50" position="0 13.5 5" material="shader: flat; side: double; opacity: 1;
+src:https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSLSTsXXCjk8OS7bFwtVteSf2DSGLlinQmQ_LOcJvbfQaqNXwDk8n0kmK_VZkQ&usqp=CAc"></a-entity>
+
+      <!---floor----->
+      <a-entity static-body geometry="primitive: box; depth: 50; height: 0.1; width: 50" position="0 0 5" material="shader: flat; side: double; opacity: 1;
+src:https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSF8tq7J9mu_6vdiGTDAMwY9hC5t_ti2ukrhg&usqp=CAU"></a-entity>
+
+      <!---walls----->
+      <a-entity static-body geometry="primitive: box; depth: .5; height: 14; width: 50" position="-25 6.5 5" rotation="0 90 0" material="shader: standard;
+roughness: 1; src:https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAaCh97hdAWyvYcqNgN-QGcygM0VX2MlnedQ&usqp=CAU; repeat: 1 2"></a-entity>
+      <a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 50" position="25 6.5 5" rotation="0 90 0" material="shader: standard;
+roughness: 1; src:https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAaCh97hdAWyvYcqNgN-QGcygM0VX2MlnedQ&usqp=CAU; repeat: 1 2"></a-entity>
+      <a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 50" position="0 6.5 -20" rotation="0 0 0" material="shader: standard;
+roughness: 1; src:https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAaCh97hdAWyvYcqNgN-QGcygM0VX2MlnedQ&usqp=CAU; repeat: 1 2"></a-entity>
+      <a-entity static-body geometry="primitive: box; depth: 1; height: 14; width: 50" position="0 6.5 30" rotation="0 0 0" material="shader: standard;
+roughness: 1; src: https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAaCh97hdAWyvYcqNgN-QGcygM0VX2MlnedQ&usqp=CAU; repeat: 1 2"></a-entity>
+
+      <!---table---->
+      <a-entity gltf-model="#table" position="18 0 13" rotation="0 90 0" scale="5 5 5"></a-entity>
+
+      <!---Chairs--->
+      <a-entity gltf-model="#chair" position="16 1 10" scale="1 1 1" rotation="0 90 0"></a-entity>
+      <a-entity gltf-model="#chair" position="16 1 12" scale="1 1 1" rotation="0 90 0"></a-entity>
+      <a-entity gltf-model="#chair" position="16 1 14" scale="1 1 1" rotation="0 90 0"></a-entity>
+      <a-entity gltf-model="#chair" position="16 1 16" scale="1 1 1" rotation="0 90 0"></a-entity>
+
+      <a-entity gltf-model="#chair" position="20 1 10" scale="1 1 1" rotation="0 270 0"></a-entity>
+      <a-entity gltf-model="#chair" position="20 1 12" scale="1 1 1" rotation="0 270 0"></a-entity>
+      <a-entity gltf-model="#chair" position="20 1 14" scale="1 1 1" rotation="0 270 0"></a-entity>
+      <a-entity gltf-model="#chair" position="20 1 16" scale="1 1 1" rotation="0 270 0"></a-entity>
+
+
+
+    <!---fireplace--->
+      <a-entity gltf-model="#fireplace" position="-23.54 2 0" scale="3 3 3" rotation="0 90 0"></a-entity>
+
+    <!---Head--->
+    <a-entity gltf-model="#head" position="-24 5 0" scale=".15 .15 .15" rotation="9 20 -20"></a-entity>
+
+    <!---Bear--->
+    <a-entity gltf-model="#bear" position="-23 0 15" scale=".01 .01 .01" rotation="0 124 0 "></a-entity>
+
+    <!---Bookshelf--->
+    <a-entity gltf-model="#bookshelf" position="-24.2 0 11" scale=".02 .02 .02" rotation="0 270 0"></a-entity>
+    <a-entity gltf-model="#bookshelf" position="-24.2 0 9" scale=".02 .02 .02" rotation="0 270 0"></a-entity>
+    <a-entity gltf-model="#bookshelf" position="-24.2 0 7" scale=".02 .02 .02" rotation="0 270 0"></a-entity>
+
+    <!---chandlier--->
+    <a-entity gltf-model="#chandlier" position="18 10 13" scale="4 4 4"></a-entity>
+
+    <!---Door--->
+    <a-entity gltf-model="#door" position="-2 0 -19.5" rotation="0 90 0" scale=".01 .01 .01"></a-entity>
+    <a-entity gltf-model="#door" position="2 0 -19.5" rotation="0 270 0" scale=".01 .01 .01"></a-entity>
+
+    <!---stove--->
+    <a-entity gltf-model="#stove" position="23 0 -5" scale=".015 .015 .015" rotation="0 180 0"></a-entity>
+    <a-entity gltf-model="#stove" position="23 0 -2.75" scale=".015 .015 .015" rotation="0 180 0"></a-entity>
+    <a-entity gltf-model="#stove" position="23 0 -.75" scale=".015 .015 .015" rotation="0 180 0"></a-entity>
+
+    <!---kitchen--->
+    <a-entity gltf-model="#kitchen" position="19 0.6 -9" scale="1 1 1" rotation="0 45 0"></a-entity>
+
+    <!---Rug--->
+    <a-entity gltf-model="#rug" position="-20 0 10" scale=".025 .025 .025"></a-entity>
+    <a-entity gltf-model="#Arug" position="0 .1 0" scale=".05 .05 .05" rotation="0 0 0"></a-entity>
+
+    <!---bird and perch--->
+    <a-entity gltf-model="#bird" position="-24 5.5 -14" animation="property: position; to:-24 5.5 -7.5;dur: 2000; easing: linear; loop: true" scale=".25 .25 .25"></a-entity>
+
+    <a-entity gltf-model="#perch" position="-26 5.5 -7" scale=".01 .01 .01" rotation="0 90 0"></a-entity>
+    <a-entity gltf-model="#perch" position="-26 5.5 -14" scale=".01 .01 .01" rotation="0 90 0"></a-entity>
+
+
+    <!---couch--->
+    <a-entity gltf-model="#couch" position="-20 1 10" scale="5 5 5" rotation="0 270 0"></a-entity>
+
+    <a-entity gltf-model="#redCouch" position="-17 0 0" scale=".025 .025 .025" rotation="0 270 0"></a-entity>
+
+    <!---pool and pong table--->
+    <a-entity gltf-model="#poolTable" position="-17 0 33" scale=".025 .025 .025" rotation="0 90 0"></a-entity>
+
+    <a-entity gltf-model="#pong" position="1 0 21" scale=".007 .007 .007"></a-entity>
+
+    </a-scene>
+  </body>
+</html>
