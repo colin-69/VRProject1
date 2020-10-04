@@ -11,7 +11,7 @@ https://vrproject1.imfast.io/
 
 ## Pictures
 
-![Image of Buttons](/VRPics/buttons.jpg)
+![Image of Buttons](https://github.com/colin-69/VRProject1/blob/master/VRPics/buttons.JPG)
 
 
 ## Models
