@@ -23,7 +23,9 @@ The dim light switch just reduces the main ambient light to get a dimmer atmosph
 
 ![Image of Tv](https://github.com/colin-69/VRProject1/blob/master/VRPics/TVon.JPG)
 
+The other interaction I added was turning on and off the tv. When the tv is off a black screen is displayed but when you click on the screen the text goes away and a video of Call of Duty being played is shown.
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Models
 
