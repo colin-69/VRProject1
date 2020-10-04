@@ -12,20 +12,7 @@ https://vrproject1.imfast.io/
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
----Models---
+## Models
 
 Fish Table- https://sketchfab.com/3d-models/fishy-table-ac6b6f2dcc3d4646969d4530b105e382
 
