@@ -33,6 +33,7 @@ The other interaction I added was turning on and off the tv. When the tv is off 
 
 ### Layout
 
+![image of room](https://github.com/colin-69/VRProject1/blob/master/VRPics/room.JPG)
 
 ## Models
 
