@@ -1,22 +1,90 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="data:application/octet-stream;base64,Rm91bmQuIFJlZGlyZWN0aW5nIHRvIC9hZnJhbWUtZW52aXJvbm1lbnQtY29tcG9uZW50QDIuMC4wL2Rpc3QvYWZyYW1lLWVudmlyb25tZW50LWNvbXBvbmVudC5taW4uanM="></script>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+
+
+    <script>
+
+    var dimLight_on=false;
+    function dimLight(){
+      var dim_switch = document.querySelector('#switch1');
+      var dim_switch_source = document.querySelector('#switch1_source');
+      if(!dimLight_on){
+        dim_switch_source.setAttribute('intensity', "1");
+        dimLight_on= true;
+      }
+      else{
+        dim_switch_source.setAttribute('intensity', "8");
+        dimLight_on= false;
+      }
+    }
+
+
+    var covidmode = false;
+    var games = false;
+    function covidMode(){
+      var dim_switch_source = document.querySelector('#switch1_source');
+      var dim_switch = document.querySelector('#switch1');
+      var Covid_source1 = document.querySelector('#covid_source1');
+      var Covid_source2 = document.querySelector('#covid_source2');
+      var Covid_light1 = document.querySelector('#covid_light1');
+      var Covid_light2 = document.querySelector('#covid_light2');
+
+
+      if(!covidmode){
+        dim_switch_source.setAttribute('intensity', "1");
+        Covid_source1.setAttribute('intensity', ".7");
+        Covid_source2.setAttribute('intensity', ".7");
+        Covid_light1.setAttribute('position', "-22 14 8.8");
+        Covid_light2.setAttribute('position', "22 14 8.8");
+
+        games = true;
+        dimLight_on = true;
+        covidmode = true;
+      }
+      else{
+        dim_switch_source.setAttribute('intensity', "8");
+        Covid_source1.setAttribute('intensity', ".01");
+        Covid_source2.setAttribute('intensity', ".01");
+        Covid_light1.setAttribute('position', "-22 17 8.8");
+        Covid_light2.setAttribute('position', "22 17 8.8");
+
+        dimLight_on = false;
+        covidmode = false;
+     }
+    }
+
+    tvOn = false;
+    function tvClick()
+    {
+      var tv = document.querySelector('#tvScreen');
+      var text = document.querySelector('#tvText');
+      var video = document.querySelector('#tv');
+      if(!tvOn){
+        text.setAttribute('visible', 'false');
+        tv.setAttribute('material', 'color', 'white');
+        video.play();
+        tvOn = true;
+      }
+      else{
+        tv.setAttribute('material', 'color', 'black');
+        text.setAttribute('visible', 'true');
+        tvOn = false;
+      }
+    }
+    </script>
+
+
+
+
   </head>
   <body>
     <a-scene>
 
-    <a-text value="Meet my bird Paco!" position="-24 3 -10" rotation="0 90 0"
-
-    ></a-text>
-
-
-
 
       <a-assets>
-        <img id="groundTexture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS4MgMdUauN7cwpgG4qG6ui_xV3Xv20UvOXOw&usqp=CAU">
-        <img id="skyTexture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSdumw5aKsanPj1h5fX3PwBTD3qa0vlXc3kxQ&usqp=CAU">
         <a-asset-items id="table" src="gltfTable/scene.gltf"></a-asset-items>
         <a-asset-items id="chair" src="gltfChair/scene.gltf"></a-asset-items>
         <a-asset-items id="fireplace" src="gltfFireplace/scene.gltf"></a-asset-items>
@@ -36,25 +104,45 @@
         <a-asset-items id="pong" src="gltfPong/scene.gltf"></a-asset-items>
         <a-asset-items id="Arug" src="gltfArug/scene.gltf"></a-asset-items>
         <a-asset-items id="Ftable" src="gltfFTable/scene.gltf"></a-asset-items>
+
+        <video id="tv" src="COD1.mp4"></video>
       </a-assets>
 
 
 
       <!---camera-->
-      <a-entity position="0 1 -10" rotation="0 180 0">
-        <a-camera universal-controls="acceleration: 10">
-      <a-entity raycaster="far: 150; objects: .intersectable" cursor geometry="primitive: ring; radiusOuter: 0.015;
-                              radiusInner: 0.01; segmentsTheta: 32" material="color: #283644; shader: flat" position="0 0 -0.75"></a-entity>
+
+      <a-camera position="0 3 -10" rotation="0 0 0">
+        <a-entity cursor="fuse: false"  position="0 0 -1"   geometry="primitive:ring; radiusInner: 0.02; radiusOuter: 0.03"  material="color: black; shader: flat"></a-ring>
       </a-camera>
-    </a-entity>
+
+
+      <!---Lighting--->
+
+      <a-light id="switch1_source" type="ambient" color="#222" intensity="8"></a-light>
+      <a-cylinder id="switch1" onclick="dimLight()"  color="blue" height=".1" radius=".3" position="-8 2 -19.5" rotation="0 90 90"></a-cylinder>
+      <a-entity text="value: Click button to dim lights!" position="-6.7 3 -19.5" scale="5 5 5"></a-entity>
+
+      <!---covid lights--->
+      <a-cylinder id="covid_switch" onclick="covidMode()"  color="red" height=".1" radius=".3" position="-11 2 -19.5" rotation="0 90 90"></a-cylinder>
+      <a-text value="Covid Mode!" position="-11.5 3 -19.5" scale="1 1 1"></a-text>
+
+      <a-light id="covid_source1" type="point" color="red" intensity=".01" position="-22 13 8.8"></a-light>
+      <a-entity id="covid_light1" geometry="primitive: sphere; radius: 2" position="-22 17 8.8" material="color:red" transparency="true"></a-entity>
+
+      <a-light id="covid_source2" type="point" color="red" intensity=".01" position="22 13 8.8"></a-light>
+      <a-entity id="covid_light2" geometry="primitive: sphere; radius: 2" position="22 17 8.8" material="color:red"></a-entity>
+
 
 
       <a-sky id="image-360" radius="99" src="#skyTexture"></a-sky>
       <a-plane src="#groundTexture" rotation="-90 0 0" width="100" depth="100" height="100" repeat="300 300"></a-plane>
 
+
+
+
       <!---celing----->
-      <a-entity static-body geometry="primitive: box;  depth: 50; height: 0.1; width: 50" position="0 13.5 5" material="shader: flat; side: double; opacity: 1;
-src:https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSLSTsXXCjk8OS7bFwtVteSf2DSGLlinQmQ_LOcJvbfQaqNXwDk8n0kmK_VZkQ&usqp=CAc"></a-entity>
+      <a-entity static-body geometry="primitive: box;  depth: 50; height: 0.1; width: 50" position="0 13.5 5" material="color:#777676"></a-entity>
 
       <!---floor----->
       <a-entity static-body geometry="primitive: box; depth: 50; height: 0.1; width: 50" position="0 0 5" material="shader: flat; side: double; opacity: 1;
@@ -77,17 +165,17 @@ roughness: 1; src: https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAaCh
       <a-entity gltf-model="#chair" position="16 1 10" scale="1 1 1" rotation="0 90 0"></a-entity>
       <a-entity gltf-model="#chair" position="16 1 12" scale="1 1 1" rotation="0 90 0"></a-entity>
       <a-entity gltf-model="#chair" position="16 1 14" scale="1 1 1" rotation="0 90 0"></a-entity>
-      <a-entity gltf-model="#chair" position="16 1 16" scale="1 1 1" rotation="0 90 0"></a-entity>
+
 
       <a-entity gltf-model="#chair" position="20 1 10" scale="1 1 1" rotation="0 270 0"></a-entity>
       <a-entity gltf-model="#chair" position="20 1 12" scale="1 1 1" rotation="0 270 0"></a-entity>
       <a-entity gltf-model="#chair" position="20 1 14" scale="1 1 1" rotation="0 270 0"></a-entity>
-      <a-entity gltf-model="#chair" position="20 1 16" scale="1 1 1" rotation="0 270 0"></a-entity>
+
 
 
 
     <!---fireplace--->
-      <a-entity gltf-model="#fireplace" position="-23.54 2 0" scale="3 3 3" rotation="0 90 0"></a-entity>
+    <a-entity gltf-model="#fireplace" position="-23.54 2 0" scale="3 3 3" rotation="0 90 0"></a-entity>
 
     <!---Head--->
     <a-entity gltf-model="#head" position="-24 5 0" scale=".15 .15 .15" rotation="9 20 -20"></a-entity>
@@ -96,7 +184,7 @@ roughness: 1; src: https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAaCh
     <a-entity gltf-model="#bear" position="-23 0 15" scale=".01 .01 .01" rotation="0 124 0 "></a-entity>
 
     <!---Bookshelf--->
-    <a-entity gltf-model="#bookshelf" position="-24.2 0 11" scale=".02 .02 .02" rotation="0 270 0"></a-entity>
+
     <a-entity gltf-model="#bookshelf" position="-24.2 0 9" scale=".02 .02 .02" rotation="0 270 0"></a-entity>
     <a-entity gltf-model="#bookshelf" position="-24.2 0 7" scale=".02 .02 .02" rotation="0 270 0"></a-entity>
 
@@ -110,7 +198,7 @@ roughness: 1; src: https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAaCh
     <!---stove--->
     <a-entity gltf-model="#stove" position="23 0 -5" scale=".015 .015 .015" rotation="0 180 0"></a-entity>
     <a-entity gltf-model="#stove" position="23 0 -2.75" scale=".015 .015 .015" rotation="0 180 0"></a-entity>
-    <a-entity gltf-model="#stove" position="23 0 -.75" scale=".015 .015 .015" rotation="0 180 0"></a-entity>
+
 
     <!---kitchen--->
     <a-entity gltf-model="#kitchen" position="19 0.6 -9" scale="1 1 1" rotation="0 45 0"></a-entity>
@@ -119,11 +207,6 @@ roughness: 1; src: https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAaCh
     <a-entity gltf-model="#rug" position="-20 0 10" scale=".025 .025 .025"></a-entity>
     <a-entity gltf-model="#Arug" position="0 .1 0" scale=".05 .05 .05" rotation="0 0 0"></a-entity>
 
-    <!---bird and perch--->
-    <a-entity gltf-model="#bird" position="-24 5.5 -14" animation="property: position; to:-24 5.5 -7.5;dur: 2000; easing: linear; loop: true" scale=".25 .25 .25"></a-entity>
-
-    <a-entity gltf-model="#perch" position="-26 5.5 -7" scale=".01 .01 .01" rotation="0 90 0"></a-entity>
-    <a-entity gltf-model="#perch" position="-26 5.5 -14" scale=".01 .01 .01" rotation="0 90 0"></a-entity>
 
 
     <!---couch--->
@@ -132,13 +215,22 @@ roughness: 1; src: https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSAaCh
     <a-entity gltf-model="#redCouch" position="-17 0 0" scale=".025 .025 .025" rotation="0 270 0"></a-entity>
 
     <!---pool and pong table--->
-    <a-entity gltf-model="#poolTable" position="-17 0 33" scale=".025 .025 .025" rotation="0 90 0"></a-entity>
+    <a-entity gltf-model="#poolTable"  position="-17 0 33" scale=".025 .025 .025" rotation="0 90 0"></a-entity>
 
-    <a-entity gltf-model="#pong" position="1 0 21" scale=".007 .007 .007"></a-entity>
+    <a-entity gltf-model="#pong"  position="1 0 21" scale=".007 .007 .007"></a-entity>
 
-          <!---fish table--->
+    <!---fish table--->
     <a-entity gltf-model="#Ftable" position="23 1 -8.5" scale="2 2 2"></a-entity>
-      
+
+    <!---TV--->
+    <a-entity position="-23 3 -11.5">
+		 		<a-box position="-1.75 4 0" height="7" width="0.3" depth="11" color="#292929"></a-box>
+		 		<a-box id="tvScreen" onclick="tvClick()" position="-1.5 4 0" rotation="0 90 0" height="6" width="10" depth="0.1" color="black" material="side:double; src: #tv; shader: flat"></a-box>
+        <a-text id="tvText" value="Turn on TV" align="center" color="#FFF" position="-0.4 4 0" scale="2 2 2" rotation="0 90 0"></a-text>
+		 	</a-entity>
+
+
+
     </a-scene>
   </body>
 </html>
