@@ -12,6 +12,12 @@ https://vrproject1.imfast.io/
 ## Pictures
 ### Interactions
 ![Image of Buttons](https://github.com/colin-69/VRProject1/blob/master/VRPics/buttons.JPG)
+These are buttons I added in that allow the user to enter Covid Mode(left button) or dim the lights(right button).
+
+Covid for me has meant i've been trapped inside my house playing games all day. Since the beginning of lock down I purchased a ton of led lights and set them up everywhere. So for my covid mode i decided to implement the color lights just like I have. When you click on the Covid mode button the main light is dimmed to almost off and 2 red lights now appear and the intensity of these 2 lights are turned up. When turning off covid mode the red lights go away and the normal ambient light is brightened as usual. 
+
+The dim light switch just reduces the main ambient light to get a dimmer atmosphere. 
+
 
 
 ## Models
