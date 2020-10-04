@@ -19,7 +19,9 @@ Covid for me has meant i've been trapped inside my house playing games all day. 
 
 ![Image of covid](https://github.com/colin-69/VRProject1/blob/master/VRPics/covid.JPG)
 
-The dim light switch just reduces the main ambient light to get a dimmer atmosphere. 
+The dim light switch just reduces the main ambient light to get a dimmer atmosphere.
+
+![image of dim](https://github.com/colin-69/VRProject1/blob/master/VRPics/dim.JPG)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
