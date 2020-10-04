@@ -39,6 +39,8 @@ The other interaction I added was turning on and off the tv. When the tv is off 
 
 ![image pic2](https://github.com/colin-69/VRProject1/blob/master/VRPics/pic2.JPG)
 
+![image pong](https://github.com/colin-69/VRProject1/blob/master/VRPics/pongt.JPG)
+
 ## Models
 
 Fish Table- https://sketchfab.com/3d-models/fishy-table-ac6b6f2dcc3d4646969d4530b105e382
