@@ -1,4 +1,23 @@
-# VRProject1
+# VRProject1 Report 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ---Models---
 
 Fish Table- https://sketchfab.com/3d-models/fishy-table-ac6b6f2dcc3d4646969d4530b105e382
@@ -9,11 +28,7 @@ Ping Pong Table- https://sketchfab.com/3d-models/low-poly-ping-pong-table-541b94
 
 Pool Table- https://sketchfab.com/3d-models/pool-table-low-poly-625c012402074e91a1a534b771920a17
 
-Pet Bird- https://sketchfab.com/3d-models/phoenix-243fea4f846f44d18d37bf371272b7ec
-
 Loung Couches- https://sketchfab.com/3d-models/chesterfield-lounge-set-36ac2ea9644c4988ad780f3022fd4616
-
-Bird Perch- https://sketchfab.com/3d-models/gnarly-stick-some-call-it-a-wand-106153ecee9d45b195a565c7abfb7095
 
 Sofa- https://sketchfab.com/3d-models/old-sofa-free-90be7242f24749c3a8e0b0a69c616fc1
 
@@ -25,4 +40,16 @@ Stove- https://sketchfab.com/3d-models/old-stove-94d1176a440f4c578f19cfee0795a8a
 
 Door- https://sketchfab.com/3d-models/old-wood-door-b64ba1bc8b2f40f887477c102b626c5d
 
+Wooden Table- https://sketchfab.com/3d-models/wooden-table-4b93a3649d5b4ae9bbebc244a2fc3a6f
 
+Wood Chairs - https://sketchfab.com/3d-models/wood-chair-b1fa03a904934e5a9578c92d6016ca01
+
+Fireplace - https://sketchfab.com/3d-models/wood-chair-b1fa03a904934e5a9578c92d6016ca01
+
+Fireplace Head - https://sketchfab.com/3d-models/wooden-head-from-above-a-fireplace-4-4cdcabc7890146a899ce8f87e8d143ef
+
+Stuffed Bear - https://sketchfab.com/3d-models/strong-bear-1d1bb459a39a428282ce4cb46bdc3ed5 
+
+Bookshelf - https://sketchfab.com/3d-models/dusty-old-bookshelf-free-6c5ac2547db34c3c81b2e4808b000386
+
+Chandelier - https://sketchfab.com/3d-models/classic-chandelier-c20bbe8d6e5d46558feb62944f400cc4
