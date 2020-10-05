@@ -33,6 +33,8 @@ The other interaction I added was turning on and off the tv. When the tv is off 
 
 ### Layout
 
+For my project I decided to make my dream log cabin. I decided to try and make a bigger room to replicate a bigger house like a mansion. I thought it would be best to use models to decorate my environment and add interactions with certain things. 
+
 ![image of room](https://github.com/colin-69/VRProject1/blob/master/VRPics/room.JPG)
 
 ![Image pic1](https://github.com/colin-69/VRProject1/blob/master/VRPics/pic1.JPG)
