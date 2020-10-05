@@ -9,6 +9,11 @@ https://vrproject1.imfast.io/
 
 *Please allow 1-2 minutes for models to fully Load*
 
+## Video Link
+
+![video](https://www.youtube.com/watch?v=US8F9BoLDCc&feature=youtu.be)
+
+
 ## Pictures
 ### Interactions
 ![Image of Buttons](https://github.com/colin-69/VRProject1/blob/master/VRPics/buttons.JPG)
