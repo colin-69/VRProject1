@@ -7,7 +7,7 @@ https://vrproject1.imfast.io/
 
 *After clicking link scroll to the bottom of the page and select "VRProject1.html"*
 
-*Please allow 1-2 minutes for models to fully Load*
+*Please allow 1-2 minutes for models to fully load*
 
 ## Video Link
 
